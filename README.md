@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-# ostad_flutter
-=======
-# ostad_task
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
->>>>>>>  module 5
+![Screenshot_20230607-232521](https://github.com/EHTarek/ostad_flutter/assets/90475460/faf3bc8a-c05a-4a44-8fe2-84061296340d)
+![Screenshot_20230607-232527](https://github.com/EHTarek/ostad_flutter/assets/90475460/accadc88-3f89-4406-a55d-d58184aa183b)
+![Screenshot_20230607-232533](https://github.com/EHTarek/ostad_flutter/assets/90475460/82bbaaf5-5639-48d5-bbeb-5e3385898591)
