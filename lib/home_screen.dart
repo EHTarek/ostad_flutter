@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         context,
         MaterialPageRoute(
           builder: (BuildContext context) {
-            return SecondScreen();
+            return SecondScreen(value: _counter,);
           },
         ),
       );
