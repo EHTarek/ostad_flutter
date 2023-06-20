@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_task/product_list.dart';
+import 'package:ostad_task/pages/product_list.dart';
 
 void main() {
   runApp(const MyApp());

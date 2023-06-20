@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ostad_task/pages/cart_page.dart';
-import 'model/product_model.dart';
+import '../model/product_model.dart';
 
 class ProductList extends StatefulWidget {
   @override
