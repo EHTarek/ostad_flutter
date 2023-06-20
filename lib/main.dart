@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_task/home_screen.dart';
+import 'package:ostad_task/product_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Counter App',
+      title: 'Product List',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: ProductList(),
     );
   }
 }
-
