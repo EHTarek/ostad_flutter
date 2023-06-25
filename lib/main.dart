@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_task/pages/product_list.dart';
+import 'package:ostad_task/view/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Product List',
+      title: 'Task Management',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProductList(),
+      home: const HomeScreen(),
     );
   }
 }
