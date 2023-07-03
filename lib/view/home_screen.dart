@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/task_model.dart';
+import '../model/contact_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,132 +10,57 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<TaskModel> taskList = [];
+  List<ContactModel> contactList = [
+    ContactModel(
+        name: 'John Doe', email: 'john.doe@gmail.com', phone: '+9900949422479'),
+    ContactModel(
+        name: 'John Smith',
+        email: 'john.smith@gmail.com',
+        phone: '+9900812751208'),
+    ContactModel(
+        name: 'Alice Johnson',
+        email: 'alice.johnson@gmail.com',
+        phone: '+99005189528953'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffe8e8e9),
+      backgroundColor: Color(0xffffffff),
       appBar: AppBar(
-        title: const Text('Task Management'),
+        title: const Text('Contact List'),
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: taskList.length,
+        itemCount: contactList.length,
         itemBuilder: (context, index) => ListTile(
-          onTap: () {},
-          onLongPress: () {
-            showBottomSheet(
+          title: Text(contactList[index].name),
+          onTap: () {
+            showModalBottomSheet(
               context: context,
               builder: (_) => Container(
-                // height: 200,
                 width: double.maxFinite,
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Task Details',
+                      'Contact Details',
                       style:
                           TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 10),
-                    Text('Title: ${taskList[index].title}'),
-                    Text('Description: ${taskList[index].description}'),
-                    Text(
-                        'Days Required: ${taskList[index].deadline?.toStringAsFixed(0)}'),
-                    SizedBox(height: 10),
-                    ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            taskList.removeAt(index);
-                          });
-                          Navigator.pop(context);
-                        },
-                        child: const Text('Delete')),
+                    const SizedBox(height: 20),
+                    Text('Name: ${contactList[index].name}'),
+                    Text('Email: ${contactList[index].email}'),
+                    Text('Phone Number: ${contactList[index].phone}'),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
             );
           },
-          title: Text(taskList[index].title),
-          subtitle: Text(taskList[index].description),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          String? newTitle, newDescription, newDaysRequired;
-          showDialog<void>(
-            context: context,
-            barrierDismissible: false,
-            // false = user must tap button, true = tap outside dialog
-            builder: (BuildContext dialogContext) {
-              return AlertDialog(
-                title: const Text('Add Task'),
-                content: SingleChildScrollView(
-                  child: Form(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Title',
-                            label: Text('Title'),
-                          ),
-                          onChanged: (value) {
-                            newTitle = value;
-                          },
-                        ),
-                        const SizedBox(height: 10),
-                        TextFormField(
-                          maxLines: 5,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Description',
-                            label: Text('Description'),
-                          ),
-                          onChanged: (value) {
-                            newDescription = value;
-                          },
-                        ),
-                        const SizedBox(height: 10),
-                        TextFormField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: 'Days Required',
-                            label: Text('Days Required'),
-                          ),
-                          onChanged: (value) {
-                            newDaysRequired = value;
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                actions: [
-                  TextButton(
-                      onPressed: () {
-                        try {
-                          setState(() {
-                            taskList.add(TaskModel(
-                                title: newTitle!,
-                                description: newDescription!,
-                                deadline:
-                                    double.parse(newDaysRequired ?? '0')));
-                          });
-                        } catch (e) {}
-                        Navigator.pop(context);
-                      },
-                      child: const Text('Save'))
-                ],
-              );
-            },
-          );
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }
