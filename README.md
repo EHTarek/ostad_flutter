@@ -8,3 +8,4 @@
 * [Module 7 Live Test](https://github.com/EHTarek/ostad_flutter/tree/module_7_live_test)
 * [Module 7 Assignment](https://github.com/EHTarek/ostad_flutter/tree/module_7_assignment)
 * [Module 8 Assignment](https://github.com/EHTarek/ostad_flutter/tree/module_8_assignment)
+* [Module 8 Live Test](https://github.com/EHTarek/ostad_flutter/tree/module_8_live_test)
