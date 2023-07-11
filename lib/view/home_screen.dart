@@ -15,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   WeatherModel? weatherModel;
+  late final Map<String, dynamic> map;
 
   Future getWeatherData() async {
     try{
