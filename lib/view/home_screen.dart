@@ -78,11 +78,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Text(
                       'Temperature: ${snapshot.data!.main!.temp!.toStringAsFixed(1)}°C',
-                      style: TextStyle(fontSize: 24),
+                      style: const TextStyle(fontSize: 24),
                     ),
                     Text(
                       'Description: ${snapshot.data!.weather![0].description}',
-                      style: TextStyle(fontSize: 24),
+                      style: const TextStyle(fontSize: 24),
                     ),
                   ],
                 );
@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Text('Error: ${snapshot.error}');
               }
 
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             },
           ),
         ),
