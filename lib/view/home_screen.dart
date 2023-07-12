@@ -21,7 +21,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<WeatherModel> fetchWeatherData() async {
     // final apiKey = 'b75cb551c73b6aff232bfbf3acb61e33';
     // final url = 'https://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=$apiKey&units=metric';
-    final url = 'https://api.openweathermap.org/data/2.5/weather?lat=23.8032369&lon=90.3653871&appid=b75cb551c73b6aff232bfbf3acb61e33&units=metric';
+    final url =
+        'https://api.openweathermap.org/data/2.5/weather?lat=23.8032369&lon=90.3653871&appid=b75cb551c73b6aff232bfbf3acb61e33&units=metric';
 
     final response = await http.get(Uri.parse(url));
 
@@ -68,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Color(0xff8d6bc4),
               ]),
         ),
-        child:  Center(
+        child: Center(
           child: FutureBuilder<WeatherModel>(
             future: fetchWeatherData(),
             builder: (context, snapshot) {
@@ -76,12 +77,39 @@ class _HomeScreenState extends State<HomeScreen> {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Temperature: ${snapshot.data!.main!.temp!.toStringAsFixed(1)}°C',
-                      style: const TextStyle(fontSize: 24),
+                    Text(snapshot.data!.name.toString(), style: TextStyle(fontSize: 22),),
+                    Text('Updated: 10:00 PM', style: TextStyle(color: Colors.white70),),
+                    SizedBox(height: 50),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Icon(
+                          Icons.cloud,
+                          size: 50,
+                          color: Colors.white,
+                        ),
+                        Text(
+                          '${snapshot.data!.main!.temp!.toStringAsFixed(1)}°',
+                          style: const TextStyle(fontSize: 24),
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'max: ${snapshot.data!.main!.tempMax!.toStringAsFixed(1)}°',
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                            Text(
+                              'min: ${snapshot.data!.main!.tempMin!.toStringAsFixed(1)}°',
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
+                    SizedBox(height: 50),
                     Text(
-                      'Description: ${snapshot.data!.weather![0].description}',
+                      '${snapshot.data!.weather![0].description}',
                       style: const TextStyle(fontSize: 24),
                     ),
                   ],
