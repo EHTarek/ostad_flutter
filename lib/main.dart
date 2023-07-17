@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           titleMedium: TextStyle(color: Colors.white),
         ),
       ),
-      home: const HomeScreen(),
+      home:  HomeScreen(),
     );
   }
 }
