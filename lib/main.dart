@@ -13,15 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Weather',
-      theme: ThemeData(
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(color: Colors.white),
-          displayMedium: TextStyle(color: Colors.white),
-          bodyMedium: TextStyle(color: Colors.white),
-          titleMedium: TextStyle(color: Colors.white),
-        ),
-      ),
+      title: 'Profile',
       home:  HomeScreen(),
     );
   }
