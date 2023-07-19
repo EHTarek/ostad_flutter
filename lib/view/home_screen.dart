@@ -197,18 +197,17 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Container(
           padding: const EdgeInsets.all(5),
-          height: height,
-          width: height,
+          height: 300,
+          width: 300,
           child: CircleAvatar(
             backgroundImage: const NetworkImage(
               'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
             ),
-            radius: height / 2,
+            radius: 100,
           ),
         ),
         Container(
-          width: width-height,
-          height: height,
+          width: 400,
           child: ListView(
             children: [
               const Text(
@@ -221,7 +220,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     'An image is a visual representation of something. An image can be a two-dimensional (2D) representation, such as a drawing, painting, or photograph.'),
               ),
               GridView.builder(
-                scrollDirection: Axis.horizontal,
                 itemCount: imgList.length,
                 shrinkWrap: true,
                 primary: false,
