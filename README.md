@@ -11,3 +11,5 @@
 * [Module 8 Live Test](https://github.com/EHTarek/ostad_flutter/tree/module_8_live_test)
 * [Module 9 Assignment](https://github.com/EHTarek/ostad_flutter/tree/module_9_assignment)
 * [Module 9 Live Test](https://github.com/EHTarek/ostad_flutter/tree/module_9_live_test)
+* [Module 10 Assignment](https://github.com/EHTarek/ostad_flutter/tree/module_10_assignment)
+* [Module 10 Live Test](https://github.com/EHTarek/ostad_flutter/tree/module_10_live_test)
